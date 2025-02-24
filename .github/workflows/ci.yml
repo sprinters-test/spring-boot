@@ -1,8 +1,5 @@
 name: CI
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
 jobs:
   ci:
     name: '${{ matrix.os.name}} | Java ${{ matrix.java.version}}'
