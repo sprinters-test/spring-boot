@@ -10,7 +10,7 @@ jobs:
         os:
           - id: 'ubuntu-latest'
             name: Linux
-          - id: "sprinters:aws:ubuntu-latest"
+          - id: "sprinters:aws:ubuntu-latest:m7i-flex.xlarge"
             name: Sprinters
         java:
           - version: 21
