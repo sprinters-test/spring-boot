@@ -12,13 +12,11 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - id: ${{ vars.UBUNTU_MEDIUM || 'ubuntu-latest' }}
+          - id: 'ubuntu-latest'
             name: Linux
-          - id: windows-latest
-            name: Windows
+          - id: "sprinters:aws:ubuntu-latest"
+            name: Sprinters
         java:
-          - version: 17
-            toolchain: false
           - version: 21
             toolchain: false
           - version: 22
@@ -28,13 +26,6 @@ jobs:
           - version: 24
             early-access: true
             toolchain: true
-        exclude:
-          - os:
-              name: Linux
-            java:
-              version: 17
-          - os:
-              name: ${{ github.repository == 'spring-projects/spring-boot-commercial' && 'Windows' }}
     steps:
       - name: Prepare Windows runner
         if: ${{ runner.os == 'Windows' }}
